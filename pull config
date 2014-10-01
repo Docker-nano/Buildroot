@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd "$(dirname "$0")"/in
+
+docker cp Buildroot:/root/buildroot/.config . &&\
+	mv .config buildroot.conf
