@@ -1,0 +1,10 @@
+env: ROOTFS="$HOME/buildroot/output/images/rootfs.tar.xz"
+
+install:
+  - sudo ./.travis.bash
+
+script:
+  - sudo buildroot
+  - '[[ -r $ROOTFS ]]'
+  - '[[ $(tar tf "$ROOTFS" | head -1) = ./ ]]'
+  - (( $(tar tf "$ROOTFS" | wc -l) > 50 ))

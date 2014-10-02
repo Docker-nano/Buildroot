@@ -1,6 +1,8 @@
 Buildroot container
 ===================
 
+[![Build Status][Build image]][Build]
+
 This is a [Docker](http://docker.com) container for [Buildroot](http://buildroot.uclibc.org) for building root file systems (rootfs). It was created to support the [Docker nano](https://github.com/Docker-nano) project.
 
 Building
@@ -25,4 +27,9 @@ A rootfs tarball can be directly imported as a new Docker image using the follow
 The image can be run normally using a command similar to the following.
 
 `docker run --rm foo /usr/bin/bar`
+
+---
+
+  [Build]: http://travis-ci.org/Docker-nano/Buildroot
+  [Build image]: http://img.shields.io/travis/Docker-nano/Buildroot.svg "Build status"
 
