@@ -5,6 +5,15 @@ install:
 
 script:
   - sudo buildroot
+
+  # Test rootfs readable.
   - '[[ -r $ROOTFS ]]'
+
+  # Test rootfs begins with root entry.
   - '[[ $(tar tf "$ROOTFS" | head -1) = ./ ]]'
-  - (( $(tar tf "$ROOTFS" | wc -l) > 50 ))
+
+  # Test rootfs includes overlay entries.
+  - tar tf "$ROOTFS" | grep -Fx ./srv/
+
+  # Test rootfs excludes post_build entries.
+  - '! tar tf "$ROOTFS" | grep -Fx ./home/ftp/'

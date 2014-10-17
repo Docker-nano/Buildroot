@@ -1,4 +1,3 @@
 #!/bin/sh
 
-cd ~/buildroot && make
-
+cd ~/buildroot && make defconfig BR2_DEFCONFIG=.config && make clean && make

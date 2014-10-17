@@ -2,5 +2,5 @@
 
 cd "$(dirname "$0")"/in
 
-docker cp Buildroot:/root/buildroot/.config . &&\
-	mv .config buildroot.conf
+docker cp Buildroot:/root/buildroot/defconfig . &&\
+	mv defconfig buildroot.conf

@@ -1,4 +1,3 @@
 #!/bin/sh
 
-cd ~/buildroot && make nconfig
-
+cd ~/buildroot && make nconfig && make savedefconfig
