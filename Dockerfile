@@ -11,7 +11,8 @@ RUN	apt-get update && DEBIAN_FRONTEND=noninteractive\
 RUN	wget -nv http://buildroot.uclibc.org/downloads/buildroot-2014.08.tar.bz2 &&\
 	tar xf buildroot-*.tar* &&\
 	rm buildroot-*.tar* &&\
-	ln -s buildroot-* buildroot
+	ln -s buildroot-* buildroot &&\
+	mkdir -v buildroot/patches
 
 # Create rootfs overlay.
 RUN mkdir -vpm775 buildroot/rootfs_overlay/srv

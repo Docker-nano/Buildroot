@@ -1,3 +1,5 @@
+language: generic
+
 env: ROOTFS="$HOME/buildroot/output/images/rootfs.tar.xz"
 
 install:
