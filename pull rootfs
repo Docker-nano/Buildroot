@@ -1,3 +1,0 @@
-#!/bin/sh
-
-docker cp Buildroot:/root/buildroot/output/images/rootfs.tar.xz .

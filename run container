@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# Destroy any previous container.
-docker stop Buildroot >&- 2>&-
-docker rm Buildroot >&- 2>&-
-
-docker run -it --name=Buildroot buildroot

@@ -7,28 +7,22 @@ This is a [Docker](http://docker.com) container for [Buildroot](http://buildroot
 systems (rootfs). It was created to support the [Docker nano](https://github.com/Docker-nano) project.
 
 The configuration for this repository builds an empty rootfs because it is intended to serve as a template for your own
-configurations (see [customizing the build](#customizing-the-build)).
+configurations. Get started building your own product by cloning the [template](https://github.com/Docker-nano/template)
+repository.
 
 Building
 --------
 
 To build the rootfs follow these steps.
 
-1. `./build\ image` – Build the Docker image locally and tag as *buildroot*.
-2. `./run\ container` – Removes any previous container started by this script and runs a new interactive container
-	named *Buildroot* from the local *buildroot* image.
-3. `buildroot-configure` – Configure Buildroot to install desired packages.
-4. `buildroot` – Build new rootfs.
-5. [Ctrl]+[D] – Exit container.
-6. `./pull\ rootfs` – Copies the compressed rootfs tarball from the *Buildroot* container to the working directory.
-
-Customizing the build
----------------------
-
-1. Clone this repository.
-2. Follow the steps in [Building](#building).
-3. Run `./pull\ config` to update the host with the new configuration.
-4. `git commit` your changes.
+ 1. `./nano build` – Build the Docker image locally and tag as *buildroot*.
+ 2. `./nano run` – Removes any previous container started by this script and runs a new interactive container named
+    *Buildroot* from the local *buildroot* image.
+ 3. `buildroot-configure` – Configure Buildroot to install desired packages.
+ 4. `buildroot` – Build new rootfs.
+ 5. [Ctrl]+[D] – Exit container.
+ 6. `./nano pull rootfs` – Copies the compressed rootfs tarball from the *Buildroot* container to the working directory.
+ 7. `./nano pull config` – Copies the Buildroot configuration if changes have been made.
 
 Creating a Docker image
 -----------------------

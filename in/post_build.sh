@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ -z "$TARGET_DIR" ] && exit 1
+[ -n "$TARGET_DIR" ] || exit
 
 cd "$TARGET_DIR"
 
