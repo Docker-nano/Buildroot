@@ -1,0 +1,3 @@
+[submodule "mod_nano"]
+	path = mod_nano
+	url = https://github.com/Docker-nano/nano.git
