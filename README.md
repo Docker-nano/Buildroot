@@ -38,3 +38,7 @@ The image can be run normally using a command similar to the following.
 
   [Build]: http://travis-ci.org/Docker-nano/Buildroot
   [Build image]: http://img.shields.io/travis/Docker-nano/Buildroot.svg "Build status"
+  
+Note on Windows/Cygwin
+-----------------------
+You might find yourself with strange formatting and non-usability of the ncurses interface when running `buildroot-configure` through a cygwin console on VirtualBox (maybo on others, too). Just entering the VirtualBox console directly and entering with `docker run <NAME> && docker exec -ti <NAME> bash` and then execute within the container `buildroot-configure` does the trick for this step.
