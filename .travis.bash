@@ -7,7 +7,7 @@ apt-get update && DEBIAN_FRONTEND=noninteractive\
 	apt-get install -y build-essential libncurses5-dev rsync cpio python unzip bc wget
 
 # Install Buildroot.
-wget -nv http://buildroot.uclibc.org/downloads/buildroot-2014.11.tar.bz2 &&\
+wget -nv http://buildroot.uclibc.org/downloads/buildroot-2016.05.tar.bz2 &&\
 	tar xf buildroot-*.tar* &&\
 	rm buildroot-*.tar* &&\
 	ln -s buildroot-* buildroot &&\
