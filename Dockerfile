@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:8
 MAINTAINER Bilge <bilge@scriptfusion.com>
 
 WORKDIR	/root
