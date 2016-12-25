@@ -4,11 +4,12 @@ MAINTAINER Bilge <bilge@scriptfusion.com>
 WORKDIR	/root
 
 # Install dependencies.
-RUN	apt-get update && DEBIAN_FRONTEND=noninteractive\
-	apt-get install -y build-essential libncurses5-dev rsync cpio python unzip bc wget
+RUN	sed -i '/squeeze-updates/d;s/httpredir/archive/;s#security.debian.org#archive.debian.org/debian-security#' /etc/apt/sources.list &&\
+	apt-get -o Acquire::Check-Valid-Until=false update && DEBIAN_FRONTEND=noninteractive\
+	apt-get install -y build-essential libncurses5-dev rsync cpio python unzip bc wget ca-certificates
 
 # Install Buildroot.
-RUN	wget -nv http://buildroot.uclibc.org/downloads/buildroot-2014.11.tar.bz2 &&\
+RUN	wget -nv http://buildroot.uclibc.org/downloads/buildroot-2016.11.tar.bz2 &&\
 	tar xf buildroot-*.tar* &&\
 	rm buildroot-*.tar* &&\
 	ln -s buildroot-* buildroot &&\
@@ -18,8 +19,7 @@ RUN	wget -nv http://buildroot.uclibc.org/downloads/buildroot-2014.11.tar.bz2 &&\
 RUN mkdir -vpm775 buildroot/rootfs_overlay/srv
 
 # Install toolchain.
-RUN	wget -nv --no-check-certificate \
-	https://github.com/Docker-nano/crosstool-NG/releases/download/1.0.1/x86_64-nano-linux-uclibc.tar.xz &&\
+RUN	wget -nv https://github.com/Docker-nano/crosstool-NG/releases/download/1.0.1/x86_64-nano-linux-uclibc.tar.xz &&\
 	tar xf *.tar* &&\
 	ln -s "$(tar tf *.tar* | head -1)" toolchain &&\
 	rm *.tar*
