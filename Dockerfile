@@ -1,12 +1,11 @@
-FROM debian:6
+FROM debian:8
 MAINTAINER Bilge <bilge@scriptfusion.com>
 
 WORKDIR	/root
 
 # Install dependencies.
-RUN	sed -i '/squeeze-updates/d;s/httpredir/archive/;s#security.debian.org#archive.debian.org/debian-security#' /etc/apt/sources.list &&\
-	apt-get -o Acquire::Check-Valid-Until=false update && DEBIAN_FRONTEND=noninteractive\
-	apt-get install -y build-essential libncurses5-dev rsync cpio python unzip bc wget ca-certificates
+RUN	apt-get update && DEBIAN_FRONTEND=noninteractive\
+	apt-get install -y build-essential libncurses5-dev rsync cpio python unzip bc wget
 
 # Install Buildroot.
 RUN	wget -nv http://buildroot.uclibc.org/downloads/buildroot-2016.11.tar.bz2 &&\

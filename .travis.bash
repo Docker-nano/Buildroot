@@ -4,7 +4,7 @@ cd ~
 
 # Install dependencies.
 apt-get update && DEBIAN_FRONTEND=noninteractive\
-	apt-get install -y build-essential libncurses5-dev rsync cpio python unzip bc wget ca-certificates
+	apt-get install -y build-essential libncurses5-dev rsync cpio python unzip bc wget
 
 # Install Buildroot.
 wget -nv http://buildroot.uclibc.org/downloads/buildroot-2016.11.tar.bz2 &&\
