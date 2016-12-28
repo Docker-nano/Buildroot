@@ -1,12 +1,19 @@
+notifications:
+  email: false
+
 language: generic
 
-env: ROOTFS="$HOME/buildroot/output/images/rootfs.tar.xz"
+sudo: required
 
-install:
-  - sudo ./.travis.bash
+services:
+  - docker
+
+env: ROOTFS="$TRAVIS_BUILD_DIR/product/rootfs.tar.xz"
 
 script:
-  - sudo buildroot
+  - ./nano build container
+  - ./nano build rootfs
+  - ./nano pull rootfs
 
   # Test rootfs readable.
   - '[[ -r $ROOTFS ]]'

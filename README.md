@@ -15,7 +15,7 @@ Building
 
 To build the rootfs follow these steps.
 
- 1. `./nano build` – Build the Docker image locally and tag as *buildroot*.
+ 1. `./nano build container` – Build the Docker image locally and tag as *buildroot*.
  2. `./nano run` – Removes any previous container started by this script and runs a new interactive container named
     *Buildroot* from the local *buildroot* image.
  3. `buildroot-configure` – Configure Buildroot to install desired packages.
