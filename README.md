@@ -3,7 +3,7 @@ Buildroot container
 
 [![Build Status][Build image]][Build]
 
-This is a [Docker](http://docker.com) container for [Buildroot](http://buildroot.uclibc.org) for building root file
+This is a [Docker](http://docker.com) container for [Buildroot](https://buildroot.org/) for building root file
 systems (rootfs). It was created to support the [Docker nano](https://github.com/Docker-nano) project.
 
 The configuration for this repository builds an empty rootfs because it is intended to serve as a template for your own
