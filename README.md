@@ -15,7 +15,7 @@ Building
 
 To build the rootfs follow these steps.
 
- 1. `./nano build container` – Build the Docker image locally and tag as *buildroot*.
+ 1. `./nano build image` – Build the Docker image locally and tag as *buildroot*.
  2. `./nano run` – Removes any previous container started by this script and runs a new interactive container named
     *Buildroot* from the local *buildroot* image.
  3. `buildroot-configure` – Configure Buildroot to install desired packages.
@@ -23,6 +23,14 @@ To build the rootfs follow these steps.
  5. [Ctrl]+[D] – Exit container.
  6. `./nano pull rootfs` – Copies the compressed rootfs tarball from the *Buildroot* container to the working directory.
  7. `./nano pull config` – Copies the Buildroot configuration if changes have been made.
+
+### BusyBox
+
+To build BusyBox follow these steps.
+
+ 1. `busybox-configure` – Configure BusyBox to install the desired utilities.
+ 2. `buildroot-configure` – Configure Buildroot to build BusyBox from the *target packages* menu.
+ 3. Change the BusyBox configuration file setting to point to `/etc/busybox.conf`.
 
 Creating a Docker image
 -----------------------

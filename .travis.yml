@@ -11,7 +11,7 @@ services:
 env: ROOTFS="$TRAVIS_BUILD_DIR/product/rootfs.tar.xz"
 
 script:
-  - ./nano build container
+  - ./nano build image
   - ./nano build rootfs
   - ./nano pull rootfs
 
