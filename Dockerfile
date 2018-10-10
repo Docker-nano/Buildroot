@@ -8,7 +8,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive\
     apt-get install -y build-essential libncurses5-dev rsync cpio python unzip bc wget
 
 # Install Buildroot.
-RUN wget -nv http://buildroot.uclibc.org/downloads/buildroot-2016.11.tar.bz2 &&\
+RUN wget -nv https://buildroot.org/downloads/buildroot-2018.02.6.tar.bz2 &&\
     tar xf buildroot-*.tar* &&\
     rm buildroot-*.tar* &&\
     ln -s buildroot-* buildroot &&\
@@ -24,7 +24,7 @@ RUN wget -nv https://github.com/Docker-nano/crosstool-NG/releases/download/2.1.0
     rm *.tar*
 
 # Install BusyBox.
-RUN wget -nv https://busybox.net/downloads/busybox-1.25.1.tar.bz2 &&\
+RUN wget -nv https://busybox.net/downloads/busybox-1.27.2.tar.bz2 &&\
     tar xf *.tar* &&\
     rm *.tar* &&\
     ln -s busybox-* busybox &&\
